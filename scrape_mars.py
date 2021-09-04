@@ -29,16 +29,13 @@ def scrape_info():
     executable_path = {'executable_path': ChromeDriverManager().install()}
     browser = Browser('chrome', **executable_path, headless=False)
 
+
     url = 'https://spaceimages-mars.com/'
-    browser.visit(url)  
-
-    executable_path = {'executable_path': ChromeDriverManager().install()}
-    browser = Browser('chrome', **executable_path, headless=False)
-
-    rl = 'https://spaceimages-mars.com/'
     browser.visit(url)
 
-    full_image = soup.find('a', class_= 'showimg fancybox-thumbs')['href']
+    time.sleep(1)
+
+    full_image = soup.find_all('a', class_= 'showimg fancybox-thumbs')['href']
     featured_image_url = url + full_image
     # Close the browser after scraping
     browser.quit()
