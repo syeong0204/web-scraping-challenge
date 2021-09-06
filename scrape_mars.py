@@ -41,10 +41,34 @@ def scrape_info():
     browser.quit()
 
 
+    hemi = []
+
+    for i in range(4):
+    html = browser.html
+    soup = bs(html, 'html.parser')
+
+    title = soup.find_all('h3')[i].get_text()
+    browser.find_by_tag('h3')[i].click()
+    
+    html = browser.html
+    soup = bs(html, 'html.parser')
+    
+    hemi_img = soup.find('a', text='Sample')['href']
+    browser.back()
+
+
+    hemi.append({
+        'title':title,
+        'hemi_img': hemi_img
+    })
+
+
+
     mars_data = {
     "news_title": news_title,
     "news_p": news_p,
-    'featured_image_url': featured_image_url
+    'featured_image_url': featured_image_url,
+    'hemi_scrape': hemi
     }
     return mars_data
     
