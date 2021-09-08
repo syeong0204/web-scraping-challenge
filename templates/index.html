@@ -12,9 +12,8 @@
 <body>
   <div class="container-fluid">
     <div class="jumbotron text-center">
-      <h1>Visit the...</h1>
-      <p>Beach. Rainforest. Volcano. Tree House. Sloths.</p>
-      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Get Data!</a></p>
+      <h1>Mission to Mars</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data!</a></p>
     </div>
 
     <div class='container'>
@@ -24,11 +23,12 @@
           <div class="card-body">
             <h4 class="card-title"> {{ mars_data.news_title }} </h4>
             <h6 class="card-subtitle mb-2 text-muted"> {{ mars_data.news_p }} </h6>
-            <img src ={{ mars_data.featured_image_url}}>
           </div>
         </div>
       </div>
     </div>
+
+    <div>
 </body>
 
 </html>
